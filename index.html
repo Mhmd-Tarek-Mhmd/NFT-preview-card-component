@@ -5,6 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFT preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(217, 54%, 11%);
+      }
+      .card {
+        --primary: hsl(178, 100%, 50%);
+
+        width: 327px;
+        padding: 24px;
+        max-width: 100%;
+        border-radius: 16px;
+        box-sizing: border-box;
+        color: hsl(215, 51%, 70%);
+        font-family: "Outfit", sans-serif;
+        background-color: hsl(216, 50%, 16%);
+      }
+      .card h2 {
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.3em;
+        margin: 25px 0 15px;
+        will-change: color;
+        transition: color 0.3s;
+      }
+      .card h2:hover {
+        color: var(--primary);
+      }
+      .card p {
+        margin: 0;
+        font-weight: 300;
+      }
+      @media (min-width: 768px) {
+        .card {
+          width: 350px;
+          padding-bottom: 32px;
+        }
+        .card p {
+          font-size: 18px;
+        }
+      }
+
+      .card-image {
+        position: relative;
+      }
+      .card-image img {
+        height: auto;
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .card-image::before {
+        opacity: 0.7;
+        display: none;
+        inset: 0 0 0 0;
+        position: absolute;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        content: url(images/icon-view.svg);
+        transition: background-color 0.3s;
+        will-change: display, background-color;
+      }
+      .card-image:hover::before {
+        display: flex;
+        background-color: var(--primary);
+      }
+
+      .card-body .info {
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .card-body .info > * {
+        gap: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .card-body .info :first-child {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .card-footer {
+        gap: 15px;
+        display: flex;
+        margin-top: 16px;
+        padding-top: 16px;
+        align-items: center;
+        border-top: 1px solid hsl(215, 32%, 27%);
+      }
+      .card-footer img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid white;
+      }
+      .card-footer p strong {
+        color: white;
+        cursor: pointer;
+        font-weight: 400;
+        will-change: color;
+        transition: color 0.3s;
+      }
+      .card-footer p strong:hover {
+        color: var(--primary);
+      }
+      @media (min-width: 768px) {
+        .card-footer {
+          margin-top: 24px;
+          padding-top: 24px;
+        }
+      }
+    </style>
   </head>
   <body>
     <main>
