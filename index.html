@@ -21,6 +21,13 @@
         justify-content: center;
         background-color: hsl(217, 54%, 11%);
       }
+      .sr-only {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+      }
       .card {
         --primary: hsl(178, 100%, 50%);
 
@@ -68,9 +75,9 @@
         border-radius: 10px;
       }
       .card-image::before {
+        inset: 0;
         opacity: 0.7;
         display: none;
-        inset: 0 0 0 0;
         position: absolute;
         border-radius: 10px;
         align-items: center;
@@ -133,6 +140,11 @@
     </style>
   </head>
   <body>
+    <!-- For a11y -->
+    <header class="sr-only">
+      <h1>NFT preview card</h1>
+    </header>
+
     <main>
       <article class="card">
         <div class="card-image">
